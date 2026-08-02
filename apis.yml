@@ -1,7 +1,16 @@
 aid: topk
 name: Topk
-description: Topk is a company surfaced as a portfolio company of earlybird and added to the API Evangelist
-  network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+description: >-
+  TopK is a search engine for accuracy-critical AI applications, delivering hybrid search,
+  multi-vector (late-interaction) retrieval, dense and sparse vector search, BM25 keyword
+  search, custom ranking, document parsing, and grounded question answering through a single
+  API. Built on object storage for roughly 10x lower cost and effectively unlimited scale,
+  TopK exposes a Collection API for structured document storage and querying, a Dataset API
+  for unstructured document ingestion, semantic search, and evidence-backed answers, and a
+  Management API for datasets and collections. It ships official Python, JavaScript, Rust, and
+  SQL (PostgreSQL-wire) SDKs, a Homebrew-installable CLI, and a hosted MCP server so AI agents
+  can query private data with natural language. TopK is developed by topk-io and is a portfolio
+  company of Earlybird.
 url: https://raw.githubusercontent.com/api-evangelist/topk/refs/heads/main/apis.yml
 x-type: company
 x-source: vc-portfolio
@@ -9,14 +18,156 @@ x-backed-by:
 - earlybird
 x-tier: stub
 x-tier-reason: portfolio-lead
+x-enrichment:
+  date: '2026-07-21'
+  status: enriched
+  artifacts_added: 18
+  pass: local-v1
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: medium
+  source:
+  - authentication
+  generated: '2026-07-22'
+  method: derived
 specificationVersion: '0.20'
 created: '2026-07-17'
-modified: '2026-07-17'
+modified: '2026-07-21'
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/topk.png
 tags:
 - Company
-apis: []
+- Search
+- Vector Search
+- Hybrid Search
+- Multi-Vector Retrieval
+- Semantic Search
+- BM25
+- Retrieval
+- RAG
+- Question Answering
+- AI Infrastructure
+- Embeddings
+- MCP
+apis:
+- aid: topk:collection-api
+  name: TopK Collection API
+  description: >-
+    Structured document store and query surface. Create collections with typed, indexed fields
+    (keyword_index, semantic_index, vector index), upsert/update/delete documents by `_id`, and
+    run hybrid queries that combine dense vector, multi-vector, sparse vector, BM25 keyword
+    search, and metadata filtering in a single request.
+  humanURL: https://docs.topk.io/collections/query
+  baseURL: https://elastica.api.topk.io
+  tags:
+  - Collections
+  - Query
+  - Hybrid Search
+  - Documents
+  properties:
+  - type: Documentation
+    url: https://docs.topk.io/collections/query
+  - type: APIReference
+    url: https://docs.topk.io/sdk/topk-py
+- aid: topk:dataset-api
+  name: TopK Dataset API
+  description: >-
+    Unstructured document ingestion, semantic search, and grounded question answering. Upload
+    document files (PDF, Markdown, HTML, and more) to a dataset, retrieve the most relevant
+    passages, and get evidence-backed answers with citations.
+  humanURL: https://docs.topk.io/datasets/search
+  baseURL: https://elastica.api.topk.io
+  tags:
+  - Datasets
+  - Ingest
+  - Ask
+  - RAG
+  properties:
+  - type: Documentation
+    url: https://docs.topk.io/datasets/search
+- aid: topk:management-api
+  name: TopK Management API
+  description: >-
+    Create, list, get, update, and delete datasets and collections that back TopK search and
+    retrieval.
+  humanURL: https://docs.topk.io/collections/manage
+  baseURL: https://elastica.api.topk.io
+  tags:
+  - Management
+  - Collections
+  - Datasets
+  properties:
+  - type: Documentation
+    url: https://docs.topk.io/collections/manage
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+common:
+- type: DeveloperPortal
+  url: https://docs.topk.io
+- type: Documentation
+  url: https://docs.topk.io
+- type: APIReference
+  url: https://docs.topk.io/sdk/topk-py
+- type: GettingStarted
+  url: https://docs.topk.io/introduction
+- type: Blog
+  url: https://www.topk.io/blog
+- type: GitHubOrganization
+  url: https://github.com/topk-io
+- type: Pricing
+  url: https://www.topk.io/pricing
+- type: SignUp
+  url: https://console.topk.io
+- type: Login
+  url: https://console.topk.io
+- type: StatusPage
+  url: https://status.topk.io
+- type: TermsOfService
+  url: https://topk.io/terms-of-service
+- type: PrivacyPolicy
+  url: https://topk.io/privacy-policy
+- type: Compliance
+  url: https://trust.topk.io
+- type: TrustCenter
+  url: security/topk-trust-center.yml
+- type: Security
+  url: https://topk.io/security
+- type: Packages
+  url: packages/topk-packages.yml
+- type: SDKs
+  url: packages/topk-packages.yml
+- type: CLI
+  url: cli/topk-cli.yml
+- type: MCPServer
+  url: mcp/topk-mcp.yml
+- type: LLMsTxt
+  url: llms/topk-llms.txt
+- type: WellKnown
+  url: well-known/topk-well-known.yml
+- type: SecurityTxt
+  url: well-known/topk-security.txt
+- type: Authentication
+  url: authentication/topk-authentication.yml
+- type: Lifecycle
+  url: lifecycle/topk-lifecycle.yml
+- type: ChangeLog
+  url: changelog/topk-changelog.yml
+- type: Conventions
+  url: conventions/topk-conventions.yml
+- type: DataModel
+  url: data-model/topk-data-model.yml
+- type: Conformance
+  url: conformance/topk-conformance.yml
+- type: DomainSecurity
+  url: security/topk-domain-security.yml
+- type: VulnerabilityDisclosure
+  url: security/topk-vulnerability-disclosure.yml
+- type: AgentSkill
+  url: skills/_index.yml

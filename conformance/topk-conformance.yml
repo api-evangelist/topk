@@ -1,0 +1,28 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.topk.io + https://topk.io/security + https://trust.topk.io
+standards:
+- id: bearer-token-auth
+  conforms: true
+  evidence: API authenticates with an API key sent as an HTTP Authorization Bearer token.
+- id: postgresql-wire-protocol
+  conforms: true
+  evidence: topk-sql lets any PostgreSQL client connect over the Postgres wire protocol to run search.
+- id: bm25
+  conforms: true
+  evidence: Full-text keyword search implements the BM25 ranking function with tunable b and k1 parameters.
+- id: oauth2
+  conforms: false
+  evidence: No OAuth2 surface documented; access is opaque API-key bearer tokens.
+- id: openid-connect
+  conforms: false
+- id: rfc9457-problem-details
+  conforms: false
+  evidence: No application/problem+json error format documented; SDKs expose typed error classes instead.
+- id: soc2
+  conforms: true
+  evidence: TopK's security page states SOC 2 compliance; certification detail is published at the Trust Center (trust.topk.io).
+compliance:
+  soc2: true
+  trust_center: https://trust.topk.io
+  security_page: https://topk.io/security

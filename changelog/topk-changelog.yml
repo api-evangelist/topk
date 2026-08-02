@@ -1,0 +1,31 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.topk.io/changelog
+scheme: monthly-dated
+current_sdk_version: '0.12.0'
+docs: https://docs.topk.io/changelog
+entries:
+- date: '2026-06'
+  breaking: false
+  highlights:
+  - Added Partitioned Collections (Namespaces) for effortless multi-tenancy with fully isolated, on-demand partitions.
+  - Made SQL the search query language for hybrid and multi-vector search (no proprietary query language required).
+  - Introduced semantic_index enabling production-ready multi-vector retrieval with a single schema annotation.
+  - Optimized the SMVE kernel to match GPU performance with just 8 CPU threads.
+- date: '2026-05'
+  breaking: false
+  highlights:
+  - Added native support for structs with full indexing and filtering (search/filter nested structured data without flattening the schema).
+  - Released Iso-ModernColBERT, a late-interaction model optimized for efficient inference and scalable retrieval.
+- date: '2026-04'
+  breaking: false
+  highlights:
+  - Shipped the Datasets API for unstructured document ingestion, search, and grounded question answering (PDF, Markdown, HTML, and more).
+  - Shipped the CLI to manage datasets, ingest documents, and query them from the terminal.
+  - Shipped the MCP server to connect private data inside datasets to AI agents.
+- date: '2026-03'
+  breaking: false
+  highlights:
+  - Added support for tuning BM25 (configure b and k1 parameters to adjust ranking behavior).
+  - Published a blog post about SMVE, an algorithm for sparse/multi-vector execution.
+older_entries_window: Changelog documents monthly entries back to June 2025; see the docs for the full history.

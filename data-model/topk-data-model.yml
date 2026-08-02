@@ -1,0 +1,57 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.topk.io/concepts + https://docs.topk.io/collections + https://docs.topk.io/datasets
+description: >-
+  TopK exposes two primary storage abstractions: Collections (structured documents with typed,
+  indexed fields for hybrid search) and Datasets (unstructured document files ingested for
+  semantic search and grounded question answering). Derived from the documented concepts and
+  API surface; no OpenAPI is published.
+entities:
+- name: Collection
+  description: A named container of structured documents with a typed schema. Fields can carry keyword (BM25), semantic (multi-vector), and dense/sparse vector indexes, plus metadata for filtering. Supports on-demand isolated partitions (namespaces) for multi-tenancy.
+  key: name
+  operations:
+  - create
+  - list
+  - get
+  - delete
+  relationships:
+  - has_many: Document
+    via: collection
+- name: Document
+  description: A record stored in a collection, keyed by `_id`, with schema-typed fields (text, struct, vectors, metadata). Written via upsert/update/delete and read via query or get-by-id.
+  key: _id
+  operations:
+  - upsert
+  - update
+  - delete
+  - query
+  - get
+  relationships:
+  - belongs_to: Collection
+    via: collection
+- name: Dataset
+  description: A container of ingested unstructured document files (PDF, Markdown, HTML, and more) used for semantic search and grounded question answering (Ask).
+  key: name
+  operations:
+  - create
+  - list
+  - get
+  - update
+  - delete
+  - ingest
+  - search
+  - ask
+  relationships:
+  - has_many: DatasetDocument
+    via: dataset
+- name: DatasetDocument
+  description: An ingested source file within a dataset; passages are retrieved during search and cited in grounded answers.
+  relationships:
+  - belongs_to: Dataset
+    via: dataset
+- name: Partition
+  description: An on-demand, fully isolated namespace within a collection enabling multi-tenancy.
+  relationships:
+  - belongs_to: Collection
+    via: collection

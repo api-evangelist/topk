@@ -1,0 +1,35 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.topk.io/sdk/topk-py/overview + https://docs.topk.io/mcp-server + https://docs.topk.io/cli
+docs: https://docs.topk.io
+summary:
+  types:
+  - http
+  http_schemes:
+  - bearer
+  api_key_env: TOPK_API_KEY
+  oauth2_flows: []
+schemes:
+- name: apiKeyBearer
+  type: http
+  scheme: bearer
+  description: >-
+    All TopK access (REST API, SDKs, CLI, and the MCP server) authenticates with a TopK API key
+    presented as a Bearer token in the Authorization header, or supplied via the TOPK_API_KEY
+    environment variable. API keys are generated in the TopK console (console.topk.io). Requests
+    are region-scoped: the client is configured with both an API key and a region (e.g.
+    aws-us-east-1-elastica) which selects the {region}.api.topk.io host.
+  in: header
+  header: Authorization
+  value_format: 'Bearer <TOPK_API_KEY>'
+  env_var: TOPK_API_KEY
+  key_management_url: https://console.topk.io
+  applies_to:
+  - REST API (collections, datasets, management)
+  - Python SDK (topk-sdk)
+  - JavaScript SDK (topk-js)
+  - Rust SDK (topk-rs)
+  - SQL / PostgreSQL wire protocol
+  - CLI (topk login / TOPK_API_KEY)
+  - MCP server
+notes: No OAuth2 or OpenID Connect surface is documented; TopK uses opaque API-key bearer tokens. No public OpenAPI is published, so this profile is sourced from the SDK/CLI/MCP documentation rather than derived from a spec.

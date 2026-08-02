@@ -1,0 +1,53 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.topk.io + package registries (PyPI, npm), github.com/topk-io
+packages:
+- language: python
+  registry: pypi
+  name: topk-sdk
+  version: 0.12.0
+  url: https://pypi.org/project/topk-sdk/
+  install: pip install topk-sdk
+  repository: https://github.com/topk-io/topk
+  docs: https://docs.topk.io/sdk/topk-py/overview
+  official: true
+  notes: Python 3.9+ SDK with synchronous and asynchronous clients, typed request/response models, retries, and error types.
+- language: javascript
+  registry: npm
+  name: topk-js
+  version: 0.12.0
+  url: https://www.npmjs.com/package/topk-js
+  install: npm install topk-js
+  repository: https://github.com/topk-io/topk
+  docs: https://docs.topk.io/sdk/topk-js/overview
+  official: true
+- language: rust
+  registry: crates.io
+  name: topk-rs
+  url: https://github.com/topk-io/topk/tree/main/topk-rs
+  docs: https://docs.topk.io/sdk/topk-rs/overview
+  repository: https://github.com/topk-io/topk
+  official: true
+  notes: Rust client for the TopK core (the topk-io/topk core engine is written in Rust).
+- language: sql
+  registry: none
+  name: topk-sql
+  url: https://docs.topk.io/sdk/topk-sql/overview
+  docs: https://docs.topk.io/sdk/topk-sql/overview
+  official: true
+  notes: Connect any PostgreSQL client to TopK over the Postgres wire protocol to create collections, insert data, and run hybrid/multi-vector search with SQL.
+- language: cli
+  registry: homebrew
+  name: topk
+  url: https://github.com/topk-io/homebrew-topk
+  install: brew tap topk-io/topk && brew install topk
+  docs: https://docs.topk.io/cli
+  official: true
+  notes: Homebrew-installable command-line interface. Command surface catalogued in cli/topk-cli.yml.
+- language: python
+  registry: pypi
+  name: topk-haystack
+  url: https://github.com/topk-io/topk-haystack
+  repository: https://github.com/topk-io/topk-haystack
+  official: true
+  notes: Official Haystack integration (document store / retriever) for using TopK inside Haystack pipelines.

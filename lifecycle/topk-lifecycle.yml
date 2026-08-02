@@ -1,0 +1,30 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.topk.io/changelog + https://status.topk.io + https://docs.topk.io/limits + https://docs.topk.io/regions
+versioning:
+  scheme: sdk-semver
+  current: '0.12.0'
+  notes: >-
+    TopK is accessed primarily through versioned client SDKs (topk-sdk / topk-js at 0.12.0).
+    There is no documented URL/date API version scheme; the service exposes a rolling,
+    continuously-updated API surface tracked via the dated changelog.
+  changelog: https://docs.topk.io/changelog
+deprecation:
+  policy_url: null
+  sunset_header: false
+  notes: No formal deprecation policy or RFC 8594 Sunset/Deprecation header support is documented.
+status_page: https://status.topk.io
+limits: https://docs.topk.io/limits
+regions:
+- name: aws-us-east-1-elastica
+  cloud: AWS
+  region: us-east-1
+  location: US East (N. Virginia)
+- name: aws-eu-central-1-monstera
+  cloud: AWS
+  region: eu-central-1
+  location: EU Central (Frankfurt)
+- name: byoc
+  cloud: customer-vpc
+  location: Customer VPC (contact sales)
+deprecated_operations: []

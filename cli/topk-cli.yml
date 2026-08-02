@@ -1,0 +1,59 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.topk.io/cli
+name: topk
+description: Command-line interface for TopK — upload documents, ask questions, and search relevant passages grounded in your data.
+install:
+- method: homebrew
+  commands:
+  - brew tap topk-io/topk
+  - brew install topk
+  tap_repo: https://github.com/topk-io/homebrew-topk
+authentication:
+  interactive: topk login
+  env_var: TOPK_API_KEY
+  example: export TOPK_API_KEY=<your-api-key>
+global_flags:
+- flag: --output
+  description: Output format.
+- flag: --api-key
+  description: Supply the TopK API key inline.
+commands:
+- name: ask
+  description: Get a grounded answer with citations from a dataset.
+  example: topk ask "my question" --dataset my-dataset
+  flags:
+  - {flag: --dataset, required: true, description: 'Dataset to search (repeatable: -d ds1 -d ds2).'}
+  - {flag: --mode, required: false, description: 'Response mode: auto (default), summarize, research.'}
+  - {flag: --field, required: false, description: 'Metadata field to include in results (repeatable).'}
+  - {flag: --show-refs, required: false, description: Show citations inline in the answer.}
+  - {flag: --output-dir, required: false, description: Save result content (images, text chunks) to a directory.}
+  stdin: 'echo "my question" | topk ask --dataset my-dataset'
+- name: search
+  description: Find relevant passages in documents.
+  example: topk search "my query" --dataset my-dataset
+  flags:
+  - {flag: --dataset, required: true, description: Dataset to search (repeatable).}
+  - {flag: --top-k, required: false, description: 'Number of results to return (default: 10).'}
+  - {flag: --field, required: false, description: Metadata field to include in results (repeatable).}
+  - {flag: --output-dir, required: false, description: Save result content to a directory.}
+  stdin: 'echo "my query" | topk search --dataset my-dataset'
+- name: upload
+  description: Upload files to a dataset.
+  examples:
+  - topk upload '*.pdf' --dataset my-dataset
+  - topk upload 'docs/**/*.md' --dataset my-dataset
+  - topk upload docs --dataset my-dataset
+- name: list
+  description: List resources.
+- name: delete
+  description: Delete resources.
+- name: dataset
+  description: Manage datasets.
+  subcommands: [list, get, create, update, delete]
+- name: login
+  description: Authenticate the CLI with a TopK API key.
+- name: logout
+  description: Sign the CLI out.
+updating:
+  description: Update the CLI via Homebrew.

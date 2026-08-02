@@ -1,0 +1,15 @@
+generated: '2026-07-21'
+method: generated
+source: https://docs.topk.io (SDK, CLI, and MCP reference)
+note: >-
+  TopK publishes no OpenAPI, so these skills are grounded in the verbatim-documented SDK
+  methods, CLI commands, and MCP tool names from docs.topk.io (not invented operationIds).
+skills:
+- file: topk-hybrid-search.md
+  name: Build a collection and run hybrid search
+  api: topk:collection-api
+  operations: [collections.create, collection.upsert, collection.query]
+- file: topk-grounded-qa.md
+  name: Ingest documents and get grounded answers (RAG)
+  api: topk:dataset-api
+  operations: [datasets.ingest, datasets.search, datasets.ask]

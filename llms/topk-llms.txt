@@ -1,0 +1,58 @@
+# TopK Documentation
+
+> Hybrid search, multi-vector search, document parsing, question answering, and more in one API.
+
+## Overview
+
+- [Introduction](https://docs.topk.io/introduction)
+- [Architecture](https://docs.topk.io/architecture)
+- [Concepts](https://docs.topk.io/concepts)
+- [Limits](https://docs.topk.io/limits): Production limits for collections and datasets.
+- [Regions](https://docs.topk.io/regions)
+- [Changelog](https://docs.topk.io/changelog)
+
+## Dataset API
+
+- [Ingest Files](https://docs.topk.io/datasets/ingest): Upload your document files to a dataset.
+- [Ask](https://docs.topk.io/datasets/ask): Get grounded, evidence-backed answers from your documents.
+- [Search](https://docs.topk.io/datasets/search): Retrieve the most relevant passages from your documents.
+
+## Collection API
+
+- [Write](https://docs.topk.io/collections/write): Upsert, update, or delete documents in a collection.
+- [Query](https://docs.topk.io/collections/query): Query documents stored in a collection.
+- [Get](https://docs.topk.io/collections/get): Get documents stored in a collection by `_id`.
+
+## Management API
+
+- [Datasets](https://docs.topk.io/datasets/manage): Create, list, get, update, and delete datasets.
+- [Collections](https://docs.topk.io/collections/manage): Create, list, get, and delete collections.
+
+## Guides
+
+- [Semantic search](https://docs.topk.io/guides/semantic-search): Add state-of-the-art semantic search to your app with no embedding pipeline, no vector store, and no reranking service to maintain.
+- [Multi-vector search](https://docs.topk.io/guides/multi-vector-search): Late-interaction retrieval using token-level embeddings and MaxSim scoring for long documents and multi-aspect queries.
+- [Dense vector search](https://docs.topk.io/guides/vector-search): High-performance ANN search with >95% recall and p99 < 50ms latency for semantic similarity at scale.
+- [Sparse vector search](https://docs.topk.io/guides/sparse-vector-search): Exact retrieval over high-dimensional sparse representations with 100% recall and support for learned sparse models like SPLADE.
+- [Keyword search (BM25)](https://docs.topk.io/guides/keyword-search): Full-text keyword search using the BM25 ranking function for term-frequency-based document retrieval.
+- [True Hybrid search](https://docs.topk.io/guides/true-hybrid-search): Combine vector, multi-vector, keyword search, and metadata filtering in a single query for best-of-all-worlds retrieval.
+
+## Python SDK Reference
+
+- [topk_sdk](https://docs.topk.io/sdk/topk-py)
+- [topk_sdk.data](https://docs.topk.io/sdk/topk-py/data)
+- [topk_sdk.error](https://docs.topk.io/sdk/topk-py/error)
+- [topk_sdk.query](https://docs.topk.io/sdk/topk-py/query)
+- [topk_sdk.schema](https://docs.topk.io/sdk/topk-py/schema)
+
+## JavaScript SDK Reference
+
+- [topk-js](https://docs.topk.io/sdk/topk-js)
+- [topk-js/data](https://docs.topk.io/sdk/topk-js/Namespace.data)
+- [topk-js/query_fn](https://docs.topk.io/sdk/topk-js/Namespace.query_fn)
+- [topk-js/query](https://docs.topk.io/sdk/topk-js/Namespace.query)
+- [topk-js/schema](https://docs.topk.io/sdk/topk-js/Namespace.schema)
+
+## SQL
+
+- [Overview](https://docs.topk.io/sdk/topk-sql/overview): Connect any PostgreSQL client to TopK and use SQL to create collections, insert data, and run search.

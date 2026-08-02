@@ -1,0 +1,16 @@
+generated: '2026-07-21'
+method: searched
+probe: true
+url: https://trust.topk.io
+source: https://topk.io/security (links to Trust Center) + https://trust.topk.io
+certifications:
+- SOC 2
+notes: >-
+  TopK's security page states "our SOC 2 compliance and other security measures" and directs
+  users to the Trust Center at trust.topk.io for compliance and certification detail. SOC 2 is
+  the only certification explicitly named on the public security page.
+evidence:
+- source: https://topk.io/security
+  keywords: [trust center, soc 2, security compliance, certifications]
+- source: https://trust.topk.io
+  kind: trust-center

@@ -1,0 +1,49 @@
+generated: '2026-07-21'
+method: searched
+source: https://docs.topk.io + SDK/CLI reference
+authentication:
+  style: bearer-api-key
+  header: Authorization
+  value: 'Bearer <TOPK_API_KEY>'
+  env_var: TOPK_API_KEY
+  ref: authentication/topk-authentication.yml
+regions:
+  required: true
+  description: Clients must be configured with a region that selects the {region}.api.topk.io host; choose the region geographically closest to the application, agents, or end users for best latency.
+  values:
+  - aws-us-east-1-elastica
+  - aws-eu-central-1-monstera
+document_identity:
+  id_field: _id
+  description: Every document in a collection is keyed by a string `_id`. Writes use upsert semantics keyed on `_id`, so re-sending a document with the same `_id` replaces it (data-level idempotency).
+write_semantics:
+  operations:
+  - upsert
+  - update
+  - delete
+  idempotent_by_id: true
+  note: Upsert is idempotent on `_id`. No request-level Idempotency-Key header is documented.
+query:
+  language: sql
+  description: Hybrid, multi-vector, keyword (BM25), dense-vector, and sparse-vector queries plus metadata filtering are expressed in a single query; SQL is supported as the query language and any PostgreSQL client can connect over the Postgres wire protocol.
+  top_k: Result count is controlled by a top-k / limit parameter (CLI --top-k, default 10).
+retries:
+  supported: true
+  description: The Python SDK documents automatic retries and configurable retry behavior.
+  ref: https://docs.topk.io/sdk/topk-py/overview
+error_handling:
+  module: topk_sdk.error
+  description: SDK exposes typed error classes for handling API errors.
+  ref: https://docs.topk.io/sdk/topk-py/error
+versioning:
+  scheme: sdk-semver
+  ref: lifecycle/topk-lifecycle.yml
+rate_limits:
+  documented: production limits published at https://docs.topk.io/limits (per-collection and per-dataset limits).
+cross_links:
+  authentication: authentication/topk-authentication.yml
+  lifecycle: lifecycle/topk-lifecycle.yml
+  data_model: data-model/topk-data-model.yml
+notes: >-
+  TopK supports data-level idempotency via upsert-by-`_id` but does not document a request
+  Idempotency-Key contract, so no `Idempotency` rating pointer is emitted (no fabrication).

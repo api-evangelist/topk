@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: probed
+source: live DNS/TLS/HTTP probes of apis.yml + OpenAPI hosts
+hosts:
+- host: docs.topk.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Aug 30 15:21:35 2026 GMT
+  hsts: true
+  hsts_max_age: 63072000
+- host: elastica.api.topk.io
+  https: true
+  tls_version: TLSv1.3
+  cert_expires: Feb 12 23:59:59 2027 GMT
+  hsts: null
+domains:
+- domain: topk.io
+  dnssec: false
+  caa:
+  - 0 issue "amazon.com"
+  - 0 issue "amazonaws.com"
+  - 0 issue "amazontrust.org"
+  - 0 issue "awstrust.com"
+  - 0 issue "letsencrypt.org"
+  spf: true
+  dmarc: true
+  dmarc_policy: quarantine
