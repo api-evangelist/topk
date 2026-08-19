@@ -2,17 +2,16 @@ generated: '2026-07-21'
 method: searched
 status: published
 source: https://docs.topk.io/mcp-server
-description: >-
-  TopK ships an official hosted, remote MCP server that lets any MCP-compatible AI agent
-  query private datasets using natural language. It is region-scoped (one HTTP endpoint per
-  region) and authenticated with a TopK API key sent as a Bearer token.
+description: TopK ships an official hosted, remote MCP server that lets any MCP-compatible AI agent query
+  private datasets using natural language. It is region-scoped (one HTTP endpoint per region) and authenticated
+  with a TopK API key sent as a Bearer token.
 server:
   name: topk
   transport: http
   auth:
     type: bearer
     header: Authorization
-    value: 'Bearer <TOPK_API_KEY>'
+    value: Bearer <TOPK_API_KEY>
     env_var: TOPK_API_KEY
     api_key_url: https://console.topk.io
   endpoints:
@@ -23,11 +22,21 @@ server:
     location: EU Central (Frankfurt)
     url: https://monstera.api.topk.io/mcp
   install:
-    claude_code: 'claude mcp add --transport http topk https://elastica.api.topk.io/mcp --header "Authorization: Bearer <your-topk-api-key>"'
+    claude_code: 'claude mcp add --transport http topk https://elastica.api.topk.io/mcp --header "Authorization:
+      Bearer <your-topk-api-key>"'
     codex: codex mcp add topk --url https://elastica.api.topk.io/mcp --bearer-token-env-var TOPK_API_KEY
-    claude_desktop: 'npx -y mcp-remote https://elastica.api.topk.io/mcp --header "Authorization: Bearer <key>"'
+    claude_desktop: 'npx -y mcp-remote https://elastica.api.topk.io/mcp --header "Authorization: Bearer
+      <key>"'
 tools:
 - name: list_datasets
   description: Discover what datasets (data) are available to the agent.
 - name: ask
-  description: Query datasets with natural language and get grounded, evidence-backed answers (File Search over dataset documents).
+  description: Query datasets with natural language and get grounded, evidence-backed answers (File Search
+    over dataset documents).
+deployment:
+  mode: remote
+  endpoint: https://elastica.api.topk.io/mcp
+  verified: probed
+  probe: http-400
+  checked: '2026-08-12'
+  source: catalog MCP census
