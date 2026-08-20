@@ -64,6 +64,11 @@ apis:
   humanURL: https://docs.topk.io/collections/query
   baseURL: https://elastica.api.topk.io
   tags:
+  - Collection
+  - Query
+  - Hybrid Search
+  - Documents
+  tags_raw:
   - Collections
   - Query
   - Hybrid Search
@@ -97,6 +102,10 @@ apis:
   humanURL: https://docs.topk.io/collections/manage
   baseURL: https://elastica.api.topk.io
   tags:
+  - Management
+  - Collection
+  - Datasets
+  tags_raw:
   - Management
   - Collections
   - Datasets
