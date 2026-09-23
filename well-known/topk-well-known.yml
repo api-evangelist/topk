@@ -1,30 +1,29 @@
 generated: '2026-07-21'
 method: searched
 host: https://www.topk.io
-notes: >-
-  security.txt is served from the marketing host (www.topk.io / topk.io). Requests to
-  topk.io/.well-known/* 307-redirect to www.topk.io. The API hosts (api.topk.io,
-  {region}.api.topk.io) and the docs host return 404 for all probed .well-known paths.
-documents:
-- path: /.well-known/security.txt
-  host: https://www.topk.io
-  status: 200
-  file: topk-security.txt
-- path: /.well-known/openid-configuration
-  host: https://www.topk.io
-  status: 404
-- path: /.well-known/oauth-authorization-server
-  host: https://www.topk.io
-  status: 404
-- path: /.well-known/api-catalog
-  host: https://www.topk.io
-  status: 404
-- path: /.well-known/ai-plugin.json
-  host: https://www.topk.io
-  status: 404
-- path: /.well-known/security.txt
-  host: https://api.topk.io
-  status: 404
-- path: /.well-known/openid-configuration
-  host: https://api.topk.io
-  status: 404
+notes: security.txt is served from the marketing host (www.topk.io / topk.io). Requests to topk.io/.well-known/*
+  307-redirect to www.topk.io. The API hosts (api.topk.io, {region}.api.topk.io) and the docs host return
+  404 for all probed .well-known paths.
+hosts:
+- host: https://www.topk.io
+  documents:
+  - path: /.well-known/security.txt
+    status: 200
+    file: topk-security.txt
+  - path: /.well-known/openid-configuration
+    status: 404
+  - path: /.well-known/oauth-authorization-server
+    status: 404
+  - path: /.well-known/api-catalog
+    status: 404
+  - path: /.well-known/ai-plugin.json
+    status: 404
+  - path: /.well-known/security.txt
+    status: 404
+  - path: /.well-known/openid-configuration
+    status: 404
+x-shape-fix:
+  converted: '2026-08-20'
+  from: documents
+  note: Rewritten into hosts[] -> documents[], the only shape well_known_docs() in score.rb reads. A served
+    .well-known surface recorded in any other shape scores as absent.
