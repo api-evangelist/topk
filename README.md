@@ -64,6 +64,108 @@
 > Full detail: **[Where this data comes from](https://apievangelist.com/about/where-our-data-comes-from)**
 <!-- API-EVANGELIST-PROVENANCE:END -->
 
-Topk is a company surfaced as a portfolio company of earlybird and added to the API Evangelist network as a stub for enrichment. This profile is a lead awaiting the enrichment pipeline.
+TopK is a search engine for accuracy-critical AI applications, delivering hybrid search, multi-vector (late-interaction) retrieval, dense and sparse vector search, BM25 keyword search, custom ranking, document parsing, and grounded question answering through a single API. Built on object storage for roughly 10x lower cost and effectively unlimited scale, TopK exposes a Collection API for structured document storage and querying, a Dataset API for unstructured document ingestion, semantic search, and evidence-backed answers, and a Management API for datasets and collections. It ships official Python, JavaScript, Rust, and SQL (PostgreSQL-wire) SDKs, a Homebrew-installable CLI, and a hosted MCP server so AI agents can query private data with natural language. TopK is developed by topk-io and is a portfolio company of Earlybird.
 
-Backed by: earlybird
+**Areas:** Company · Search · Vector Search · Hybrid Search · Multi-Vector Retrieval · Semantic Search · BM25 · Retrieval · RAG · Question Answering · AI Infrastructure · Embeddings
+
+## Topk on APIs.io
+
+Everything profiled for Topk is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/topk/](https://apis.io/providers/topk/)** — or go straight to one of the APIs or properties below.
+
+### APIs (3)
+
+- [TopK Collection API](https://apis.io/apis/topk/collection-api/) — Structured document store and query surface. Create collections with typed, indexed fields (keyword_index, semantic_index, vector index),…
+- [TopK Dataset API](https://apis.io/apis/topk/dataset-api/) — Unstructured document ingestion, semantic search, and grounded question answering. Upload document files (PDF, Markdown, HTML, and more) to a dataset,…
+- [TopK Management API](https://apis.io/apis/topk/management-api/) — Create, list, get, update, and delete datasets and collections that back TopK search and retrieval.
+
+### Published properties
+
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
+
+#### MCP servers (1)
+
+Model Context Protocol servers that expose the API to agents.
+
+- [topk](https://apis.io/servers/topk/topk/)
+
+#### Security (4)
+
+Authentication, trust centre, and vulnerability disclosure.
+
+- [Topk Authentication](https://apis.io/security/topk/topk-authentication/)
+- [Topk Domain Security](https://apis.io/security/topk/topk-domain-security/)
+- [Topk Trust Center](https://apis.io/security/topk/topk-trust-center/)
+- [Topk Vulnerability Disclosure](https://apis.io/security/topk/topk-vulnerability-disclosure/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://www.topk.io/)
+- [Documentation](https://docs.topk.io)
+- [Getting started](https://docs.topk.io/introduction)
+- [API reference](https://docs.topk.io/sdk/topk-py)
+- [Pricing](https://www.topk.io/pricing)
+- [Sign up](https://console.topk.io)
+- [Blog](https://www.topk.io/blog)
+- [Security](https://topk.io/security)
+- [Compliance](https://trust.topk.io)
+- [Terms of service](https://topk.io/terms-of-service)
+- [Privacy policy](https://topk.io/privacy-policy)
+- [GitHub](https://github.com/topk-io)
+- [Status](https://status.topk.io)
+
+## API Evangelist rating
+
+**Kin Score 43.1** — developing · rubric 0.25.0 · scored 2026-10-23
+
+| Facet | Score |
+|---|---|
+| Discoverability | 80.0 |
+| Contract quality | 0.0 |
+| Contract governance | 18.2 |
+| Operational transparency | 44.7 |
+| Developer ergonomics | 68.5 |
+| Access clarity | 53.9 |
+
+**Agent readiness 6.9** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | — |
+| Agentic Access | — |
+| Reversibility Documented | — |
+| MCP Server | documented (partial credit) |
+| Auth Clarity | bearer (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | — |
+| Event Surface Described | — |
+| Agent Skills | derived (partial credit) |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+| Pagination Ratio | na |
+| Operation Distinctiveness | na |
+
+**Regulatory alignment 32.7** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/topk/](https://apis.io/providers/topk/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Topk: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/topk/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
